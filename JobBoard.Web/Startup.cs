@@ -2,6 +2,9 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using AutoMapper;
+using JobBoard.Core.Entities;
+using JobBoard.Core.Interfaces;
 using JobBoard.Infrastructure.Data;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
@@ -25,6 +28,10 @@ namespace JobBoard.Web
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddControllersWithViews();
+
+            services.AddAutoMapper(AppDomain.CurrentDomain.GetAssemblies());
+
+            services.AddScoped<IAsyncRepository<Job>, JobBoardRepository<Job>>();
 
             services.AddDbContext<JobBoardContext>(options =>
             {

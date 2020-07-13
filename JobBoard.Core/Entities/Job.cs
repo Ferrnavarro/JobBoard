@@ -6,7 +6,7 @@ namespace JobBoard.Core.Entities
 {
     public class Job: BaseEntity
     {
-        public string JobTitle { get; set; }
+        public string Title { get; set; }
 
         public string Description { get; set; }
 

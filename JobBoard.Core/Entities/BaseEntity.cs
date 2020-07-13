@@ -6,6 +6,6 @@ namespace JobBoard.Core.Entities
 {
     public abstract class BaseEntity
     {
-        public virtual Guid Id { get; private set; }
+        public virtual Guid Id { get;  set; }
     }
 }
